@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+
+    "name": "toxicOpera",
+	"description": "Lets u see less people in VK messages",
+	"version": "1.0",
+	"background": {
+        "scripts": ["index.js"],
+        "persistent": true
+	},
+
+    "permissions": [
+        "activeTab",
+        "runtime",
+        "storage",
+
+        "webRequest",
+        "https://vk.com/al_im.php",
+
+        "tabs",
+        "https://vk.com/im"
+    ],
+    "icons": {
+        "128": "/images/main.png"
+    },
+    "browser_action": {
+		"default_icon": "/images/main.png",
+        "default_title": "Да работаю я!",
+        "default_popup": "layout/popup.html"
+	}
+}
