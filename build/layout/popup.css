@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./Roboto-Regular.ttf');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+.popup {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+
+    box-sizing: border-box;
+    padding: 16px;
+
+    width: 290px;
+    height: 150px;
+}
+
+input.userId {
+    margin-top: 4px;
+}
+
+input.submit {
+    margin-top: 32px;
+    padding: 8px 12px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: #111;
+
+    color: white;            
+    font-family: 'Roboto', sans-serif;
+}
+
+input.userId.invalid {
+    outline: 2px solid red;
+}
+
+@keyframes load {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.preloader {
+    position: absolute;
+    
+    width: 80px;
+    height: 80px;
+    
+    top: 50%;
+    left: 50%;
+    
+    margin-left: -40px;
+    margin-top: -40px;
+
+    animation: load 1s linear infinite;
+}
+
+.disabled {
+    display: none !important;
+}
