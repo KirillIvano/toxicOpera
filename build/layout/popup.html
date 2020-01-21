@@ -5,89 +5,23 @@
     <meta name="viewport" content="width=content-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url('./Roboto-Regular.ttf');
-            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-          }
-        .popup {
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-
-            box-sizing: border-box;
-            padding: 16px;
-
-            width: 290px;
-            height: 150px;
-        }
-        
-        input.userId {
-            margin-top: 4px;
-        }
-
-        input.submit {
-            margin-top: 32px;
-            padding: 8px 12px;
-
-            border: none;
-            border-radius: 4px;
-
-            background: #111;
-
-            color: white;            
-            font-family: 'Roboto', sans-serif;
-        }
-
-        input.userId.invalid {
-            outline: 2px solid red;
-        }
-
-        @keyframes load {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .preloader {
-            position: absolute;
-            
-            width: 80px;
-            height: 80px;
-            
-            top: 50%;
-            left: 50%;
-            
-            margin-left: -40px;
-            margin-top: -40px;
-
-            animation: load 1s linear infinite;
-        }
-
-        .disabled {
-            display: none !important;
-        }
-    </style>
+    <link rel="stylesheet" href="./popup.css">
     <link rel="stylesheet" href="./fonts/Roboto-Regular.ttf">
     <script defer src="./../popup.js" ></script>
 </head>
 <body>
     <main disabled class="popup">
-        <form id="popupForm">
-            <label for="userId">Введите id пользователя</label>
-            <br/>
-            <input class="userId" type="text" name="userId" id="userId">
-            <br/>
-            <input class="submit" type="submit" value="Подтвердить">
-        </form>
+        <div>
+            <form id="popupForm">
+                <label for="userId">Введите id пользователя</label>
+                <br/>
+                <input class="userId" type="text" name="userId" id="userId">
+                <br/>
+                <input class="submit" type="submit" value="Подтвердить">
+            </form>
+            <button id="toggle" class="toggle"></button>
+        </div>
+
         <img id="preloader" class="preloader disabled" src="./../images/preloader.svg" />
     </main>
 </body>

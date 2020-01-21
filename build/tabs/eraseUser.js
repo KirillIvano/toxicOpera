@@ -1,4 +1,8 @@
-chrome.storage.local.get('userId', ({userId}) => {
+chrome.storage.local.get(['userId', 'isActive'], ({userId, isActive}) => {
+    if (!isActive) {
+        return;
+    }
+
     // eslint-disable-next-line no-undef
     const messageBox = document.querySelector(`[data-list-id="${userId}"]`);
 
