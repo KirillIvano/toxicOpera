@@ -11,13 +11,17 @@
 </head>
 <body>
     <main disabled class="popup">
-        <form id="popupForm">
-            <label for="userId">Введите id пользователя</label>
-            <br/>
-            <input class="userId" type="text" name="userId" id="userId">
-            <br/>
-            <input class="submit" type="submit" value="Подтвердить">
-        </form>
+        <div>
+            <form id="popupForm">
+                <label for="userId">Введите id пользователя</label>
+                <br/>
+                <input class="userId" type="text" name="userId" id="userId">
+                <br/>
+                <input class="submit" type="submit" value="Подтвердить">
+            </form>
+            <button id="toggle" class="toggle"></button>
+        </div>
+
         <img id="preloader" class="preloader disabled" src="./../images/preloader.svg" />
     </main>
 </body>
