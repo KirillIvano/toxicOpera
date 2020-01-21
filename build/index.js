@@ -4,6 +4,14 @@ const deleteUser = () =>
         file: 'tabs/deleteUser.js',
     });
             
+// handle page change
+chrome.history.onVisited.addListener(({url}) => {
+    if (url === 'https://vk.com/im') {
+        setTimeout(() => {
+            deleteUser();
+        }, 500);
+    }
+});
 
 // handle updates
 chrome.webRequest.onCompleted.addListener(

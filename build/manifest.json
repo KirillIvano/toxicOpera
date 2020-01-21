@@ -13,6 +13,7 @@
         "activeTab",
         "runtime",
         "storage",
+        "history",
 
         "webRequest",
         "https://vk.com/al_im.php",
