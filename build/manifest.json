@@ -27,6 +27,6 @@
     "browser_action": {
 		"default_icon": "/images/main.png",
         "default_title": "Да работаю я!",
-        "default_popup": "layout/popup.html"
+        "default_popup": "popup/index.html"
 	}
 }

@@ -6,9 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^6.8.0"
-  }
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "webpack": "^4.41.5"
+  },
+  "browserslist": [ 
+    "last 2 Chrome versions"
+  ]
 }
