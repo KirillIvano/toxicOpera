@@ -9,7 +9,7 @@ import {
 
 class Main {
     constructor() {
-        this.toggle = new Toggle({
+        this.applicationActivityToggle = new Toggle({
             el: document.getElementById('toggle'),
             defaultState: false,
             onClick: this.toggleApplicationState.bind(this),
@@ -41,12 +41,12 @@ class Main {
     }
 
     toggleApplicationState() {
-        this.toggle.disable();
+        this.applicationActivityToggle.disable();
     
         getApplicationActivity((isActive) => {
-            isActive ? this.toggle.deactivate() : this.toggle.activate();
+            isActive ? this.applicationActivityToggle.deactivate() : this.applicationActivityToggle.activate();
             setApplicationActivity(isActive);
-            this.toggle.enable();
+            this.applicationActivityToggle.enable();
         });
     }
 }
