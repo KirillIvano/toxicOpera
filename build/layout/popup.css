@@ -12,9 +12,14 @@
 
     box-sizing: border-box;
     padding: 16px;
+}
 
-    width: 290px;
-    height: 150px;
+.popupContent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    height: 100%;
 }
 
 input.userId {
@@ -22,7 +27,7 @@ input.userId {
 }
 
 input.submit {
-    margin-top: 32px;
+    margin-top: 8px;
     padding: 8px 12px;
 
     border: none;
@@ -36,6 +41,69 @@ input.submit {
 
 input.userId.invalid {
     outline: 2px solid red;
+}
+
+.togglesSection {
+    margin-top: 32px;
+
+    flex: 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.toggleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    margin-bottom: 4px;
+}
+
+.toggleContainer .toggle {
+    display: block;
+    position: relative;
+
+    width: 50px;
+    height: 25px;
+    margin-right: 12px;
+
+    background: #ccc;
+
+    border-radius: 20px;
+    border: none;    
+}
+
+.toggleContainer .toggle::after {
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+    
+    top: 0;
+    left: 0;
+
+    border-radius: 15px;
+    background: #111;
+    transform: translateX(0);
+    transition: 1s;
+}
+
+.toggleContainer .toggleLabel {
+    font-size: .8rem;
+    color: #444;
+}
+.toggleContainer .toggle:disabled {
+    background: #ccc;
+}
+
+.toggleContainer .toggle.active::after{
+    content: "";
+    background: rgb(54, 180, 28);
+    transform: translateX(25px);
+    transition: 1s;
 }
 
 @keyframes load {
