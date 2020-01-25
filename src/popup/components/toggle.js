@@ -18,7 +18,6 @@ class Toggle {
             this.deactivate();
         }
         
-        
         el.addEventListener('click', () => {
             onClick(this);
         });

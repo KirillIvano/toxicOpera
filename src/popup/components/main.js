@@ -64,8 +64,7 @@ class Main {
                 this.applicationActivityToggle.deactivate() :
                 this.applicationActivityToggle.activate();
 
-            setApplicationActivity(!isActive);
-            this.applicationActivityToggle.enable();
+            setApplicationActivity(!isActive, () => this.applicationActivityToggle.enable());
         });
     }
 

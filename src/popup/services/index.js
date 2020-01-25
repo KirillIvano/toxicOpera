@@ -1,11 +1,15 @@
-export const getApplicationActivity = cb =>
-    chrome.storage.local.get(['isActive'], ({isActive}) => cb(isActive)); 
-export const setApplicationActivity = (isActive, cb) =>
-    chrome.storage.local.set({isActive: isActive}, cb);
+const createSinglePropertySetter =
+    property =>
+    (value, cb) => chrome.storage.local.set({[property]: value}, res => cb(res[property]));
 
-export const getFullHiding = cb => 
-    chrome.storage.local.get(['fullHiding'], ({fullHiding}) => cb(fullHiding));
-export const setFullHiding = (fullHiding, cb) => 
-    chrome.storage.local.set({fullHiding: fullHiding}, ({fullHiding}) => cb(fullHiding));
+const createSinglePropertyGetter =
+    property =>
+    cb => chrome.storage.local.get([property], res => cb(res[property])); 
 
-export const setErasedUserId = (userId, cb) => chrome.storage.local.set({userId}, cb);
+export const getApplicationActivity = createSinglePropertyGetter('isActive');
+export const setApplicationActivity = createSinglePropertySetter('isActive');
+
+export const getFullHiding = createSinglePropertyGetter('fullHiding');
+export const setFullHiding = createSinglePropertySetter('fullHiding');
+
+export const setErasedUserId = createSinglePropertySetter('userId');
