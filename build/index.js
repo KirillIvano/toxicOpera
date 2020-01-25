@@ -1,7 +1,7 @@
 // delete concrete user
 const deleteUser = () => 
     chrome.tabs.executeScript(null, {
-        file: 'tabs/eraseUser.js',
+        file: 'contentScripts/eraseUser.js',
     });
 
 const MESSAGES_URL = 'https://vk.com/im';

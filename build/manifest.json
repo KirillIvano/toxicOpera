@@ -8,7 +8,12 @@
         "scripts": ["index.js"],
         "persistent": true
 	},
-
+    "content_scripts": [{
+        "run_at": "document_start",
+        "all_frames": true,
+        "matches": ["https://vk.com/*"],
+        "js": ["/contentScripts/monkeyPatch.js"]
+    }],
     "permissions": [
         "activeTab",
         "runtime",
