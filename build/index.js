@@ -6,18 +6,19 @@ const deleteUser = () =>
 
 const MESSAGES_URL = 'https://vk.com/im';
 
-const checkUrlAndEraseUser = (url, timeout) => MESSAGES_URL === url && setTimeout(deleteUser, timeout);
+const checkUrlAndEraseUser =
+    (url, timeout) => MESSAGES_URL === url && setTimeout(deleteUser, timeout);
 
 // handle page change
 chrome.history.onVisited.addListener(({url}) => checkUrlAndEraseUser(url, 500));
 
 // handle tab change
-chrome.tabs.onActivated.addListener(({tabId}) => {
+chrome.tabs.onActivated.addListener(({tabId}) => 
     chrome.tabs.get(
         tabId,
-        ({url}) => checkUrlAndEraseUser(url, 0)
-    );
-});
+        ({url}) => checkUrlAndEraseUser(url, 500),
+    )
+);
 
 // handle updates
 chrome.webRequest.onCompleted.addListener(
